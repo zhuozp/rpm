@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/relativeContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的关联红点是钱包数字红点"/>
+
+        <com.gibbon.rpm.demo.widget.BadgeView
+            android:id="@+id/mineRelativePoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/packageContent"
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="钱包数字红点"/>
+        <com.gibbon.rpm.demo.widget.BadgeView
+            android:id="@+id/packageRedPointId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/cardContent"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="银行卡数字红点"/>
+        <com.gibbon.rpm.demo.widget.BadgeView
+            android:layout_gravity="top|right"
+            android:id="@+id/cardRedPointId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/settingContent"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置数字红点"/>
+        <com.gibbon.rpm.demo.widget.BadgeView
+            android:layout_gravity="top|right"
+            android:id="@+id/settingRedPointId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+    </FrameLayout>
+</LinearLayout>
