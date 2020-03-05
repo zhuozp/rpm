@@ -133,11 +133,15 @@ public final class RPObserverManager {
 //            }
 
             boolean parentRedPointCanShow = parentData.canShow;
-            for (String subPageRedPointId : parentData.subPageRedPointIds) {
-                RedPointData subPageRedPoint = getRedPointData(subPageRedPointId);
-                if (subPageRedPoint != null && subPageRedPoint.canShow) {
-                    parentRedPointCanShow = true;
-                    break;
+            if (parentData.subPageRedPointIds == null || parentData.subPageRedPointIds.isEmpty()) {
+                parentRedPointCanShow = false;
+            } else {
+                for (String subPageRedPointId : parentData.subPageRedPointIds) {
+                    RedPointData subPageRedPoint = getRedPointData(subPageRedPointId);
+                    if (subPageRedPoint != null && subPageRedPoint.canShow) {
+                        parentRedPointCanShow = true;
+                        break;
+                    }
                 }
             }
 
