@@ -1,11 +1,28 @@
-#### 介绍
-红点管理框架、提供基本的红点控件，基本的红点管理策略、以及红点读取和保存，用户开发的时候可适配自定义红点控件、以及管理和读取红点数据策略
+#### 背景
+日常需求中经常需要通过红点来加强某个功能、某个页面或某个入口的注意点。若你的应用中涉及tab 红点展示策略，红点数字展示、一级页面红点和二级页面红点展示策略、以及某个页面红点与另一个或另几个关联的红点展示策略，rpm红点管理框架基本做到满足红点的管理策略。rpm提供了默认的红点保存策略，默认保存在sp文件中，还提供了内存保存策略，接入者按需使用或者自定义保存策略，同样，rpm框架提供了红点展示策略，默认是同级页面所有红点都可以展示，接入者可以按需调整同一时间最多可以展示多少个红点。
 
+#### 示例
 ![示例](https://github.com/zhuozp/RPM/blob/master/images/device-2020-03-05-231839.gif)
 
-#### 用法如下：
+#### 接入步骤：
+1. gradle配置
+1.1 在root gradle中的repositories末尾添加远程仓库地址
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+1.2 添加rpm依赖
+```
+dependencies {
+	        implementation 'com.github.zhuozp:rpm:v1.0.0'
+	}
+```
 
-1. 定义Service
+2. 定义Service
 ```
 public interface RedPointService {
     @RedPoint({
@@ -29,9 +46,9 @@ public interface RedPointService {
 }
 ```
 
-2. 初始化
+3. 初始化
 
-2.1. 使用注解的形式初始化
+3.1. 使用注解的形式初始化
 ```
    // 生成RPM实例
    rpm = new RPM.Builder(this)
@@ -49,7 +66,7 @@ public interface RedPointService {
    
 ```
 
-2.2. 直接调用方法的形式初始化
+3.2. 直接调用方法的形式初始化
 ```
    // 生成RPM实例
    rpm = new RPM.Builder(this)
@@ -64,7 +81,7 @@ public interface RedPointService {
    rpm.initRedPoints(new int[]{xxx, xxx, xxx}, null, null, new boolean[]{true, true, true});
 ```
 
-3. 观察红点更新
+4. 观察红点更新
 ```
    @Override
     public void notifyRedPointChange(String redPointId, boolean show, int showNum) {
@@ -83,7 +100,7 @@ public interface RedPointService {
     }
 ```
 
-4. 操作红点状态
+5. 操作红点状态
 ```
       RedPointData redPointData = rpm.getRedPointData(id);
       if (redPointData != null) {
