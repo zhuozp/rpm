@@ -6,6 +6,7 @@
 
 #### 接入步骤：
 1. gradle配置
+
 1.1 在root gradle中的repositories末尾添加远程仓库地址
 ```
 allprojects {
