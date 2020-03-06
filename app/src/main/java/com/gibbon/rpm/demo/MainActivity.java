@@ -87,6 +87,12 @@ public class MainActivity extends FragmentActivity implements IRedPointsObserver
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        rpm.onDestroy(arrays);
+    }
+
+    @Override
     public void notifyRedPointChange(String redPointId, boolean show, int showNum) {
         // 红点展示view的更新
         int index = -1;
