@@ -110,5 +110,10 @@ public interface RedPointService {
       }
 ```
 
+6. 退出时做相关红点的销毁操作
+```
+	rpm.onDestroy(arrays);
+```
+
 #### 欢迎交流
 部分红点场景可能还不能一一兼顾到，欢迎PR或者提出需求
